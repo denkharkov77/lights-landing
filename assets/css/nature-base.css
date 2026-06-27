@@ -1,0 +1,77 @@
+:root {
+    --bg-main: #f9fbf9;          /* Светлый молочно-природный фон */
+    --bg-card: rgba(255, 255, 255, 0.85); /* Матовое белое стекло */
+    --bg-section-alt: #f0f4f0;   /* Фирменный блекло-зелёный фон */
+    --primary: #2d5a37;          /* Глубокий хвойный зелёный */
+    --primary-hover: #1e3f25;    /* Тёмный лесной оттенок */
+    --text-main: #2c3531;        /* Графитовый читаемый текст */
+    --text-light: #ffffff;
+    --text-muted: #6b7c74;       /* Моховой серый */
+    --border-light: rgba(45, 90, 55, 0.1);
+    --border-form: rgba(45, 90, 55, 0.25);
+    
+    --transition-fast: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.65;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    color: var(--text-main);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: var(--primary);
+    border-bottom: 2px solid rgba(45, 90, 55, 0.2);
+    padding-bottom: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 40px;
+}
+
+/* Эффект плавного проявления природных блоков */
+.animated-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+    will-change: opacity, transform;
+}
+
+.animated-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

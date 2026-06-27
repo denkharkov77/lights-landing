@@ -1,0 +1,59 @@
+/* Фоновый контейнер */
+.bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.04;
+}
+
+/* Размытые неоновые пятна */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
+  opacity: 0.08;
+  will-change: transform;
+}
+
+.blob-orange { background: var(--primary); width: 400px; height: 400px; }
+.blob-white { background: #ffffff; width: 300px; height: 300px; }
+
+/* Позиционирование фигур */
+.s-circle-1 { border: 3px solid var(--primary); border-radius: 50%; width: 120px; height: 120px; top: 15%; left: 5%; }
+.s-square-1 { border: 3px solid #fff; width: 80px; height: 80px; transform: rotate(45deg); top: 28%; right: 8%; }
+.s-circle-2 { border: 2px solid #fff; border-radius: 50%; width: 200px; height: 200px; top: 48%; left: -50px; }
+.s-square-2 { border: 3px solid var(--primary); width: 140px; height: 140px; transform: rotate(15deg); top: 65%; right: 4%; }
+.s-triangle {
+  width: 0; height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86px solid var(--primary);
+  top: 82%; left: 8%; transform: rotate(-25deg);
+}
+
+.b-1 { top: 20%; right: 10%; }
+.b-2 { top: 55%; left: 5%; }
+.b-3 { top: 78%; right: 15%; }
+
+/* Анимация поднятия блоков при прокрутке */
+.animated-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  will-change: opacity, transform;
+}
+
+.animated-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

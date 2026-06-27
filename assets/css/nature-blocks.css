@@ -1,0 +1,83 @@
+/* Блок Обо мне */
+.about-content { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+.about-img { flex: 1 1 350px; max-width: 400px; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: 0 15px 35px rgba(0,0,0,0.03); position: relative; z-index: 3; }
+.about-text { flex: 2 1 400px; background: var(--bg-card); padding: 40px; border-radius: 12px; border: 1px solid var(--border-light); }
+.about-text h3 { color: var(--text-main); margin-bottom: 20px; font-size: 1.4rem; font-weight: 700; }
+
+/* Галереи */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+.gallery-item { position: relative; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-light); height: 260px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-slow); }
+.gallery-item:hover img { transform: scale(1.03); }
+.gallery-desc { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(249, 251, 249, 0.95)); padding: 20px; font-size: 0.9rem; color: var(--text-main); font-weight: 600; border-top: 1px solid var(--border-light); }
+.video-section { background: var(--bg-section-alt); }
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; }
+.video-card { background: var(--bg-main); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-light); }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-info { padding: 25px; }
+.video-info h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 12px; font-weight: 700; }
+.video-link { color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-top: 5px; }
+.video-link:hover { color: var(--primary-hover); text-decoration: underline; }
+
+/* Блок Цен */
+.price-card { background: var(--bg-card); border: 1px solid var(--border-light); padding: 50px 35px; border-radius: 12px; text-align: center; position: relative; transition: var(--transition-fast); }
+.price-card.popular { border: 2px solid var(--primary); box-shadow: 0 15px 40px rgba(45, 90, 55, 0.06); }
+.price-card.popular .badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--primary); color: var(--text-light); padding: 4px 18px; font-size: 0.75rem; font-weight: 600; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+.price-value { font-size: 2.2rem; color: var(--primary); font-weight: 700; margin: 20px 0; }
+.price-features { list-style: none; margin-bottom: 35px; text-align: left; color: var(--text-main); }
+.price-features li { margin-bottom: 12px; position: relative; padding-left: 25px; font-size: 0.95rem; }
+.price-features li::before { content: "•"; color: var(--primary); position: absolute; left: 5px; font-weight: 700; }
+
+/* Отзывы */
+.review-card { background: var(--bg-card); padding: 35px; border-radius: 12px; border: 1px solid var(--border-light); border-top: 4px solid var(--primary); }
+.review-author { font-weight: 700; color: var(--text-main); margin-bottom: 4px; font-size: 1rem; }
+.review-meta { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; margin-bottom: 15px; display: block; }
+.review-text { color: var(--text-main); font-style: italic; }
+
+/* Форма заказа */
+.form-section { background: var(--bg-card); max-width: 600px; margin: 0 auto; text-align: center; border-radius: 12px; border: 1px solid var(--border-form); box-shadow: 0 20px 40px rgba(0,0,0,0.02); }
+form { display: flex; flex-direction: column; gap: 20px; margin-top: 35px; }
+input, select { padding: 15px; background: #ffffff; border: 1px solid rgba(45, 90, 55, 0.2); border-radius: 6px; font-size: 0.95rem; color: var(--text-main); width: 100%; transition: var(--transition-fast); }
+input:focus, select:focus { border-color: var(--primary); outline: none; background: #fdfdfd; }
+footer { background: #1e2522; color: #a3b0a9; text-align: center; padding: 45px 20px; font-size: 0.85rem; position: relative; z-index: 2; }
+
+/* Стили новых блоков */
+.quiz-steps { display: flex; flex-direction: column; gap: 25px; text-align: left; }
+.quiz-step { background: rgba(255,255,255,0.4); padding: 25px; border-radius: 8px; border: 1px solid var(--border-light); }
+.quiz-step h4 { color: var(--text-main); margin-bottom: 15px; font-size: 1.05rem; font-weight: 700; }
+.quiz-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+.quiz-radio { position: relative; }
+.quiz-radio input { position: absolute; opacity: 0; }
+.quiz-label { display: block; padding: 15px; background: #ffffff; border: 1px solid rgba(45, 90, 55, 0.15); border-radius: 8px; cursor: pointer; transition: var(--transition-fast); text-align: center; font-weight: 600; font-size: 0.9rem; }
+.quiz-radio input:checked + .quiz-label { border-color: var(--primary); color: var(--primary); background: rgba(45, 90, 55, 0.05); }
+
+.box-content { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+.box-list { list-style: none; flex: 1 1 400px; }
+.box-list li { padding: 15px 0 15px 30px; position: relative; border-bottom: 1px solid rgba(45, 90, 55, 0.06); font-size: 0.95rem; }
+.box-list li::before { content: "✓"; position: absolute; left: 5px; color: var(--primary); font-weight: 700; }
+.box-list li strong { color: var(--text-main); font-size: 0.95rem; }
+
+.comp-table-wrapper { overflow-x: auto; margin-top: 30px; border-radius: 12px; border: 1px solid var(--border-light); }
+.comp-table { width: 100%; border-collapse: collapse; min-width: 650px; background: var(--bg-card); }
+.comp-table th, .comp-table td { padding: 18px 22px; text-align: left; border-bottom: 1px solid rgba(45, 90, 55, 0.06); font-size: 0.95rem; }
+.comp-table th { background: #ecf2ec; color: var(--text-main); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; font-weight: 700; }
+.comp-table td:first-child { font-weight: 700; color: var(--text-main); }
+.comp-table td.our-product { background: rgba(45, 90, 55, 0.01); color: var(--text-main); font-weight: 500; }
+.comp-badge { display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+.comp-badge.good { background: rgba(45, 90, 55, 0.1); color: var(--primary); }
+.comp-badge.bad { background: #fcf1f1; color: #c53030; }
+
+.anatomy-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+.anatomy-text-side { flex: 1 1 400px; display: flex; flex-direction: column; gap: 25px; }
+.anatomy-point { background: var(--bg-card); padding: 25px; border-radius: 12px; border: 1px solid var(--border-light); border-left: 4px solid var(--primary); }
+.anatomy-point h4 { color: var(--text-main); margin-bottom: 8px; font-size: 1.05rem; font-weight: 700; }
+
+.faq-wrapper { max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+.faq-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 8px; }
+.faq-question { padding: 22px; color: var(--text-main); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition-fast); user-select: none; font-size: 0.95rem; }
+.faq-question:hover { color: var(--primary); background: rgba(45, 90, 55, 0.02); }
+.faq-question::after { content: "+"; font-size: 1.3rem; color: var(--primary); transition: var(--transition-fast); }
+.faq-item.active .faq-question::after { content: "-"; transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; background: rgba(255, 255, 255, 0.3); }
+.faq-answer-content { padding: 22px; color: var(--text-main); border-top: 1px solid rgba(45, 90, 55, 0.06); font-size: 0.95rem; }

@@ -1,0 +1,138 @@
+/* Кнопки в стиле эко-минимализма */
+.btn {
+    background: var(--primary);
+    color: var(--text-light);
+    padding: 14px 34px;
+    text-decoration: none;
+    border-radius: 30px; /* Скругленные органические формы */
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    letter-spacing: 0.5px;
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(45, 90, 55, 0.15);
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(45, 90, 55, 0.03);
+    transition: var(--transition-fast);
+}
+
+.card:hover {
+    border-color: rgba(45, 90, 55, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Минималистичная прозрачная шапка */
+header {
+    background: rgba(249, 251, 249, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px;
+    border-bottom: 1px solid rgba(45, 90, 55, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav a {
+    color: var(--text-main);
+    margin-left: 24px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Главный экран в спокойных природных тонах */
+.hero {
+    background: linear-gradient(rgba(249, 251, 249, 0.85), rgba(249, 251, 249, 0.95)), url("https://picsum.photos") no-repeat center/cover;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    max-width: 700px;
+    color: var(--text-muted);
+}
+
+/* Фоновая органика — имитация капель, листьев и тумана */
+.bg-shapes {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 1;
+}
+.shape { position: absolute; opacity: 0.2; }
+.blob { position: absolute; border-radius: 50%; will-change: transform; }
+.blob-orange { background: radial-gradient(circle, rgba(45, 90, 55, 0.05) 0%, rgba(45, 90, 55, 0) 70%); width: 700px; height: 700px; filter: blur(50px); }
+.blob-white { background: radial-gradient(circle, rgba(45, 90, 55, 0.03) 0%, rgba(45, 90, 55, 0) 60%); width: 600px; height: 600px; filter: blur(40px); }
+
+.s-circle-1 { border: 1px solid var(--primary); border-radius: 50%; width: 140px; height: 140px; top: 14%; left: 4%; opacity: 0.05; }
+.s-square-1 { border: 1px dashed var(--text-muted); width: 80px; height: 80px; transform: rotate(15deg); top: 26%; right: 6%; opacity: 0.08; }
+.s-circle-2 { border: 1px solid var(--text-muted); border-radius: 50%; width: 250px; height: 250px; top: 48%; left: -80px; opacity: 0.04; }
+.s-square-2 { border: 1px solid var(--primary); width: 120px; height: 120px; transform: rotate(33deg); top: 70%; right: 3%; opacity: 0.05; }
+.s-triangle { width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 86px solid var(--primary); top: 88%; left: 4%; transform: rotate(10deg); opacity: 0.04; }
+
+.b-1 { top: 18%; right: -100px; }
+.b-2 { top: 52%; left: -200px; }
+.b-3 { top: 80%; right: -50px; }
+
+@media (max-width: 768px) {
+    section { padding: 70px 15px; }
+    .section-title { font-size: 1.6rem; }
+    .hero h1 { font-size: 2rem; }
+    .nav-container { flex-direction: column; gap: 15px; }
+    nav a { margin: 0 12px; font-size: 0.85rem; }
+}
