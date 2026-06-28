@@ -1,0 +1,103 @@
+@import "variables"
+
+// Базовые карточки сайта
+.card
+  background: $bg-card
+  padding: 30px
+  border-radius: 6px
+  border: 1px solid $border-light
+  transition: $transition-fast
+  &:hover
+    border-color: $primary
+
+// Блок Обо мне
+.about-content
+  display: flex
+  align-items: center
+  gap: 40px
+  flex-wrap: wrap
+
+.about-img
+  flex: 1 1 300px
+  max-width: 400px
+  border-radius: 6px
+  border: 2px solid $primary
+
+.about-text
+  flex: 2 1 400px
+  h3
+    color: $text-light
+    margin-bottom: 15px
+  p
+    margin-bottom: 15px
+    color: $text-muted
+
+// Блоки Фото и Видео
+.gallery-grid
+  +grid-layout(250px, 20px)
+
+.gallery-item
+  position: relative
+  overflow: hidden
+  border-radius: 6px
+  border: 1px solid $border-light
+  height: 250px
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    transition: 0.5s ease
+  &:hover img
+    transform: scale(1.1)
+
+.gallery-desc
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  background: linear-gradient(transparent, rgba(0,0,0,0.9))
+  padding: 15px
+  font-size: 0.9rem
+  color: $text-light
+
+.video-section
+  background: $bg-alt
+
+.video-grid
+  +grid-layout(340px, 30px)
+
+.video-card
+  background: $bg-card
+  border-radius: 6px
+  overflow: hidden
+  border: 1px solid $border-light
+
+.video-wrapper
+  position: relative
+  padding-bottom: 56.25%
+  height: 0
+  overflow: hidden
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 0
+
+.video-info
+  padding: 20px
+  h3
+    color: $text-light
+    font-size: 1.1rem
+    margin-bottom: 10px
+
+.video-link
+  color: $primary
+  text-decoration: none
+  font-size: 0.9rem
+  font-weight: bold
+  display: inline-block
+  margin-top: 5px
+  &:hover
+    text-decoration: underline

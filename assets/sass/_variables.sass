@@ -1,0 +1,21 @@
+// Глобальные переменные темы
+$bg-main: #121212
+$bg-card: #1a1a1a
+$bg-alt: #161616
+$primary: #ff6600
+$primary-hover: #e05500
+$text-light: #ffffff
+$text-main: #e0e0e0
+$text-muted: #aaa
+$border-light: #2a2a2a
+$border-focus: #333
+
+// Тайминги переходов
+$transition-fast: 0.3s ease
+$transition-slow: 0.8s ease-out
+
+// Миксин для сетки grid
+=grid-layout($min-width: 280px, $gap: 30px)
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr))
+  gap: $gap

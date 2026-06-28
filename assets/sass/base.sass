@@ -1,0 +1,106 @@
+@import "variables"
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+body
+  background-color: $bg-main
+  color: $text-main
+  line-height: 1.6
+  scroll-behavior: smooth
+
+section
+  padding: 80px 20px
+
+.container
+  max-width: 1200px;
+  margin: 0 auto
+
+.section-title
+  text-align: center
+  font-size: 2rem
+  margin-bottom: 40px
+  text-transform: uppercase
+  color: $text-light
+  letter-spacing: 1px
+  span
+    color: $primary
+
+.grid
+  +grid-layout
+
+// Стилизация кнопок
+.btn
+  background: $primary
+  color: $text-light
+  padding: 15px 35px
+  text-decoration: none
+  border-radius: 4px
+  font-weight: bold
+  font-size: 1.1rem
+  border: none
+  cursor: pointer
+  transition: $transition-fast
+  text-transform: uppercase
+  display: inline-block
+  &:hover
+    background: $primary-hover
+    transform: translateY(-2px)
+
+// Шапка и навигация
+header
+  background: $bg-card
+  padding: 20px
+  border-bottom: 2px solid $primary
+  position: sticky
+  top: 0
+  z-index: 1000
+
+.nav-container
+  max-width: 1200px
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.logo
+  font-size: 1.5rem
+  font-weight: bold
+  color: $text-light
+  text-decoration: none
+  span
+    color: $primary
+
+nav a
+  color: $text-light
+  margin-left: 20px
+  text-decoration: none
+  font-size: 0.95rem
+  transition: $transition-fast
+  &:hover
+    color: $primary
+
+// Главный экран Hero
+.hero
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://picsum.photos') no-repeat center/cover
+  min-height: 70vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  padding: 40px 20px
+  h1
+    font-size: 2.8rem
+    margin-bottom: 15px
+    color: $text-light
+    text-transform: uppercase
+    letter-spacing: 1px
+  p
+    font-size: 1.3rem
+    margin-bottom: 30px
+    max-width: 700px
+    color: #ccc

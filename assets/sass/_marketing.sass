@@ -1,0 +1,124 @@
+@import "variables"
+
+// Интерактивный Квиз (Конструктор подбора)
+.quiz-steps
+  display: flex
+  flex-direction: column
+  gap: 25px
+  text-align: left
+
+.quiz-step
+  background: $bg-alt
+  padding: 25px
+  border-radius: 4px
+  border: 1px solid $border-light
+  h4
+    color: $text-light
+    margin-bottom: 15px
+    font-size: 1.1rem
+
+.quiz-options
+  +grid-layout(200px, 15px)
+
+.quiz-radio
+  position: relative
+  input
+    position: absolute
+    opacity: 0
+
+.quiz-label
+  display: block
+  padding: 14px
+  background: $bg-card
+  border: 1px solid $border-focus
+  border-radius: 4px
+  cursor: pointer
+  transition: $transition-fast
+  text-align: center
+
+.quiz-radio input:checked + .quiz-label
+  border-color: $primary
+  color: $text-light
+  background: rgba(255, 102, 0, 0.1)
+
+// Комплектация (Что в коробке)
+.box-content
+  display: flex
+  align-items: center
+  gap: 40px
+  flex-wrap: wrap
+
+.box-list
+  list-style: none
+  flex: 1 1 400px
+  li
+    padding: 12px 0 12px 30px
+    position: relative
+    border-bottom: 1px solid rgba(255,255,255,0.05)
+    &::before
+      content: ">"
+      position: absolute
+      left: 5px
+      color: $primary
+    strong
+      color: $text-light
+
+// Таблица сравнения с масс-маркетом
+.comp-table-wrapper
+  overflow-x: auto
+  margin-top: 30px
+
+.comp-table
+  width: 100%
+  border-collapse: collapse
+  min-width: 600px
+  background: $bg-alt
+  th, td
+    padding: 15px 20px
+    text-align: left
+    border-bottom: 1px solid rgba(255,255,255,0.05)
+  th
+    background: $bg-card
+    color: $text-light
+    text-transform: uppercase
+  td:first-child
+    font-weight: bold
+    color: $text-light
+  td.our-product
+    background: rgba(255,102,0,0.02)
+    color: $text-light
+
+.comp-badge
+  display: inline-block
+  padding: 2px 8px
+  border-radius: 4px
+  font-size: 0.8rem
+  font-weight: bold
+  &.good
+    background: rgba(0,200,0,0.1)
+    color: #00ff00
+  &.bad
+    background: rgba(200,0,0,0.1)
+    color: #ff3333
+
+// Анатомия фонаря в разрезе
+.anatomy-container
+  display: flex
+  align-items: center
+  gap: 40px
+  flex-wrap: wrap
+
+.anatomy-text-side
+  flex: 1 1 400px
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+.anatomy-point
+  background: $bg-card
+  padding: 20px
+  border-radius: 6px
+  border-left: 3px solid $primary
+  h4
+    color: $text-light
+    margin-bottom: 5px

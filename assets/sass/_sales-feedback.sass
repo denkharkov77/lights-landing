@@ -1,0 +1,156 @@
+@import "variables"
+
+// Блок Цен (Тарифные карточки)
+.price-card
+  background: $bg-card
+  padding: 40px 30px
+  border-radius: 6px
+  border: 1px solid rgba(255, 255, 255, 0.05)
+  text-align: center
+  position: relative
+  transition: $transition-fast
+  &.popular
+    border-color: $primary
+    background: rgba(30, 30, 30, 0.85)
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.1)
+    .badge
+      position: absolute
+      top: -15px
+      left: 50%
+      transform: translateX(-50%)
+      background: $primary
+      color: $text-light
+      padding: 4px 15px
+      font-size: 0.8rem
+      font-weight: bold
+      border-radius: 20px
+      text-transform: uppercase
+
+.price-value
+  font-size: 2rem
+  color: $primary
+  font-weight: bold
+  margin: 20px 0
+
+.price-features
+  list-style: none
+  margin-bottom: 30px
+  text-align: left
+  color: $text-muted
+  li
+    margin-bottom: 10px
+    position: relative
+    padding-left: 20px
+    &::before
+      content: "✓"
+      color: $primary
+      position: absolute
+      left: 0
+
+// Отзывы покупателей
+.review-card
+  background: $bg-card
+  padding: 25px
+  border-radius: 6px
+  border-left: 4px solid $primary
+
+.review-author
+  font-weight: bold
+  color: $text-light
+  margin-bottom: 5px
+  display: block
+
+.review-meta
+  font-size: 0.85rem
+  color: $primary
+  margin-bottom: 15px
+  display: block
+
+.review-text
+  color: #bbb
+  font-style: italic
+
+// Раскрывающийся FAQ (Аккордеон)
+.faq-wrapper
+  max-width: 800px
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  gap: 15px
+
+.faq-item
+  background: $bg-card
+  border: 1px solid $border-light
+  border-radius: 6px
+  overflow: hidden
+
+.faq-question
+  padding: 20px
+  color: $text-light
+  font-weight: bold
+  cursor: pointer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  transition: $transition-fast
+  user-select: none
+  &::after
+    content: "+"
+    font-size: 1.5rem
+    color: $primary
+
+.faq-item.active .faq-question::after
+  content: "−"
+
+.faq-answer
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.3s ease-out
+  background: rgba(20, 20, 20, 0.4)
+
+.faq-answer-content
+  padding: 20px
+  color: $text-muted
+  border-top: 1px solid rgba(255, 255, 255, 0.05)
+
+// Форма заказа и подвал
+.form-section
+  background: $bg-alt
+  max-width: 600px
+  margin: 0 auto
+  text-align: center
+
+form
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+input, select
+  padding: 14px
+  background: $bg-card
+  border: 1px solid $border-focus
+  border-radius: 4px
+  font-size: 1rem
+  color: $text-light
+  width: 100%
+  &:focus
+    border-color: $primary
+    outline: none
+
+footer
+  background: #0a0a0a
+  color: #555
+  text-align: center
+  padding: 30px 20px
+  font-size: 0.9rem
+  border-top: 1px solid $bg-card
+
+// Анимация поднятия блоков
+.animated-section
+  opacity: 0
+  transform: translateY(50px)
+  transition: opacity $transition-slow, transform $transition-slow
+  will-change: opacity, transform
+  &.is-visible
+    opacity: 1
+    transform: translateY(0)
