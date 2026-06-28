@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowMaster — Мощные кастомные фонари ручной сборки для охоты и рыбалки</title>
+    <!-- Подключаем скомпилированный CSS -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/blocks.css">
+    <link rel="stylesheet" href="css/effects.css">
+<!-- new design 
+    <link rel="stylesheet" href="css/tech-base.css">
+    <link rel="stylesheet" href="css/tech-layout.css">
+    <link rel="stylesheet" href="css/tech-blocks.css">
+-->
+    <link rel="stylesheet" href="css/nature-base.css">
+    <link rel="stylesheet" href="css/nature-layout.css">
+    <link rel="stylesheet" href="css/nature-blocks.css">
+
+</head>
+<body>
 
     <!-- Контейнер с декоративными фоновыми элементами -->
     <div class="bg-shapes">
