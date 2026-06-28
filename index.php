@@ -1,9 +1,8 @@
 <?php
 // Главный файл сборки лендинга GlowMaster
-?>
 
-    <?php 
     // Подключение логических блоков сайта
+	//get_template_part( 'template-parts/block/page', 'top' );
     include 'blocks/header.php';
     include 'blocks/hero.php';
     include 'blocks/about.php';
@@ -18,9 +17,3 @@
     include 'blocks/reviews.php';
     include 'blocks/order.php';
     include 'blocks/footer.php';
-    ?>
-
-    <!-- Подключаем JavaScript для анимации -->
-    <script defer src="assets/js/script.js"></script>
-</body>
-</html>

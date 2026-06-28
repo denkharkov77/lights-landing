@@ -10,3 +10,8 @@
             </p>
         </div>
     </footer>
+
+    <!-- Подключаем JavaScript для анимации -->
+    <script defer src="assets/js/script.js"></script>
+</body>
+</html>
