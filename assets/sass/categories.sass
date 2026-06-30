@@ -1,0 +1,151 @@
+// Переменные для кастомизации анимации
+$anim-duration: 0.65s
+$anim-timing: cubic-bezier(0.25, 1, 0.5, 1)
+
+// НАПРАВЛЕНИЕ ВЫЕЗДА (настройка траектории):
+// Для выезда снизу:   x = 0, y = 50px
+// Для выезда сверху:  x = 0, y = -50px
+// Для выезда слева:   x = -50px, y = 0
+// Для выезда справа:  x = 50px, y = 0
+$slide-x: 0
+$slide-y: 50px
+
+.categories-section
+  padding: 80px 0
+  background-color: #ffffff
+  overflow: hidden
+
+  &__wrapper
+    display: flex
+    gap: 50px
+
+  &__sidebar
+    width: 30%
+    flex-shrink: 0
+
+  &__content
+    width: 70%
+    position: relative
+    min-height: 350px
+
+// Навигация (Левая колонка)
+.categories-navigation
+  list-style: none
+  display: flex
+  flex-direction: column
+  gap: 12px
+  border-left: 3px solid #ebebeb
+
+  &__item
+    margin-left: -3px
+
+  &__btn
+    width: 100%
+    text-align: left
+    background: none
+    border: none
+    border-left: 3px solid transparent
+    padding: 15px 25px
+    font-size: 1.1rem
+    font-weight: 600
+    color: #666666
+    cursor: pointer
+    transition: all 0.3s ease
+
+    &:hover
+      color: #0056b3
+      background-color: #f8f9fa
+
+    &.is-active
+      color: #0056b3
+      border-left-color: #0056b3
+      background-color: #f0f7ff
+
+// Контентные вкладки (Правая колонка)
+.categories-tab
+  display: none
+  grid-template-columns: 1fr 1fr
+  gap: 35px
+  align-items: center
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  opacity: 0
+  // Комбинированный эффект: плавное появление + выезд
+  transform: translate($slide-x, $slide-y)
+  transition: opacity $anim-duration $anim-timing, transform $anim-duration $anim-timing
+
+  &.is-visible
+    display: grid
+    opacity: 1
+    transform: translate(0, 0)
+    position: relative
+
+  &__title
+    font-size: 1.8rem
+    color: #333333
+    margin-bottom: 15px
+    font-weight: 700
+
+  &__text
+    color: #666666
+    line-height: 1.6
+    margin-bottom: 25px
+
+  &__btn
+    background-color: #0056b3
+    color: #ffffff
+    padding: 12px 28px
+    border: none
+    border-radius: 6px
+    font-weight: bold
+    cursor: pointer
+    transition: background-color 0.2s ease
+    &:hover
+      background-color: #004085
+
+  &__media
+    width: 100%
+    height: 320px
+    border-radius: 12px
+    overflow: hidden
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08)
+
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+// Адаптивная сетка под планшеты и мобильные интерфейсы
+@media (max-width: 992px)
+  .categories-section__wrapper
+    flex-direction: column
+    gap: 30px
+  .categories-section__sidebar, .categories-section__content
+    width: 100%
+  .categories-navigation
+    flex-direction: row
+    border-left: none
+    border-bottom: 2px solid #ebebeb
+    overflow-x: auto
+    padding-bottom: 5px
+    &__item
+      margin-left: 0
+      margin-bottom: -2px
+    &__btn
+      border-left: none
+      border-bottom: 3px solid transparent
+      white-space: nowrap
+      padding: 10px 20px
+      &.is-active
+        border-bottom-color: #0056b3
+
+@media (max-width: 576px)
+  .categories-tab
+    grid-template-columns: 1fr
+    gap: 20px
+    &__media
+      height: 220px
+      order: -1
