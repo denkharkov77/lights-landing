@@ -32,15 +32,15 @@ $flashlight_categories = [
 ];
 ?>
 
-<div class="catalog-section">
-    <div class="container catalog-section__wrapper">
+<div class="categories-section">
+    <div class="container categories-section__wrapper">
         
         <!-- Левая колонка: Список категорий -->
-        <aside class="catalog-section__sidebar">
-            <ul class="catalog-navigation">
+        <aside class="categories-section__sidebar">
+            <ul class="categories-navigation">
                 <?php foreach ($flashlight_categories as $cat): ?>
-                    <li class="catalog-navigation__item">
-                        <button class="catalog-navigation__btn <?php echo $cat['active'] ? 'is-active' : ''; ?>" 
+                    <li class="categories-navigation__item">
+                        <button class="categories-navigation__btn <?php echo $cat['active'] ? 'is-active' : ''; ?>" 
                                 data-target="<?php echo esc_attr($cat['id']); ?>">
                             <?php echo esc_html($cat['title']); ?>
                         </button>
@@ -50,18 +50,18 @@ $flashlight_categories = [
         </aside>
 
         <!-- Правая колонка: Контентная область -->
-        <main class="catalog-section__content">
+        <main class="categories-section__content">
             <?php foreach ($flashlight_categories as $cat): ?>
-                <article class="catalog-tab <?php echo $cat['active'] ? 'is-visible' : ''; ?>" 
+                <article class="categories-tab <?php echo $cat['active'] ? 'is-visible' : ''; ?>" 
                          id="tab-<?php echo esc_attr($cat['id']); ?>">
                     
-                    <div class="catalog-tab__info">
-                        <h3 class="catalog-tab__title"><?php echo esc_html($cat['title']); ?></h3>
-                        <p class="catalog-tab__text"><?php echo esc_html($cat['text']); ?></p>
-                        <button class="catalog-tab__btn">Смотреть каталог</button>
+                    <div class="categories-tab__info">
+                        <h3 class="categories-tab__title"><?php echo esc_html($cat['title']); ?></h3>
+                        <p class="categories-tab__text"><?php echo esc_html($cat['text']); ?></p>
+                        <button class="categories-tab__btn">Смотреть каталог</button>
                     </div>
                     
-                    <div class="catalog-tab__media">
+                    <div class="categories-tab__media">
                         <img src="<?php echo esc_url($cat['img']); ?>" alt="<?php echo esc_attr($cat['title']); ?>" class="catalog-tab__img">
                     </div>
 

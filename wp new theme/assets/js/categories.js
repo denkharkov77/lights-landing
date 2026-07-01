@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navButtons = document.querySelectorAll('.catalog-navigation__btn');
-    const catalogTabs = document.querySelectorAll('.catalog-tab');
+    const navButtons = document.querySelectorAll('.categories-navigation__btn');
+    const catalogTabs = document.querySelectorAll('.categories-tab');
 
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetId = button.getAttribute('data-target');
             const targetTab = document.getElementById(`tab-${targetId}`);
+            //alert(targetTab);
 
             // 1. Деактивируем текущую активную кнопку
-            document.querySelector('.catalog-navigation__btn.is-active').classList.remove('is-active');
+            document.querySelector('.categories-navigation__btn.is-active').classList.remove('is-active');
             
             // 2. Скрываем текущий видимый таб
-            const currentTab = document.querySelector('.catalog-tab.is-visible');
+            const currentTab = document.querySelector('.categories-tab.is-visible');
             if (currentTab) {
                 currentTab.classList.remove('is-visible');
             }

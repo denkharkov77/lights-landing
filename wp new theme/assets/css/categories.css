@@ -1,0 +1,173 @@
+.categories-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.categories-section__wrapper {
+  display: flex;
+  gap: 50px;
+}
+
+.categories-section__sidebar {
+  width: 30%;
+  flex-shrink: 0;
+}
+
+.categories-section__content {
+  width: 70%;
+  position: relative;
+  min-height: 350px;
+}
+
+/* Навигация (Левая колонка) */
+.categories-navigation {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-left: 3px solid #ebebeb;
+}
+
+.categories-navigation__item {
+  margin-left: -3px;
+}
+
+.categories-navigation__btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #666666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categories-navigation__btn:hover {
+  color: #0056b3;
+  background-color: #f8f9fa;
+}
+
+.categories-navigation__btn.is-active {
+  color: #0056b3;
+  border-left-color: #0056b3;
+  background-color: #f0f7ff;
+}
+
+/* Контентные вкладки (Правая колонка) */
+.categories-tab {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* Начальное состояние анимации: выезд снизу на 50px и прозрачность */
+  -webkit-transform: translate(0, 50px);
+          transform: translate(0, 50px);
+  -webkit-transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1), -webkit-transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: opacity 0.65s cubic-bezier(0.25, 1, 0.5, 1), transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.categories-tab.is-visible {
+  display: grid;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  position: relative;
+}
+
+.categories-tab__title {
+  font-size: 1.8rem;
+  color: #333333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.categories-tab__text {
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.categories-tab__btn {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.categories-tab__btn:hover {
+  background-color: #004085;
+}
+
+.categories-tab__media {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.categories-tab__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Адаптивная сетка под планшеты */
+@media (max-width: 992px) {
+  .categories-section__wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .categories-section__sidebar, 
+  .categories-section__content {
+    width: 100%;
+  }
+  .categories-navigation {
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 2px solid #ebebeb;
+    overflow-x: auto;
+    padding-bottom: 5px;
+  }
+  .categories-navigation__item {
+    margin-left: 0;
+    margin-bottom: -2px;
+  }
+  .categories-navigation__btn {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    padding: 10px 20px;
+  }
+  .categories-navigation__btn.is-active {
+    border-bottom-color: #0056b3;
+  }
+}
+
+/* Адаптивная сетка под мобильные телефоны */
+@media (max-width: 576px) {
+  .categories-tab {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .categories-tab__media {
+    height: 220px;
+    order: -1; /* Картинка выносится наверх, текст под ней */
+  }
+}
