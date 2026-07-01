@@ -18,7 +18,7 @@ get_header();
 
     <?php 
     // Подключение логических блоков сайта
-
+ 
     get_template_part ('blocks/hero');
     get_template_part ('blocks/anatomy');
     get_template_part ('blocks/box');
