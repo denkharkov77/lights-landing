@@ -31,10 +31,9 @@ get_header();
 
     get_template_part ('blocks/gallery');
     get_template_part( 'blocks/video');
-    get_template_part( 'blocks/prices');
     get_template_part ('blocks/reviews');
-
     get_template_part ('blocks/order');
+    
     get_template_part ('blocks/categories');
 
 get_footer();
